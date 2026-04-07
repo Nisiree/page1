@@ -32,7 +32,12 @@
     <div>
         <button onclick="buttonClick()">คลิก</button>
     </div>
+    <div id="hellomyname">hello <span style="display: none;">my name</span>
+    </div>
+    <div id="mycontent">HTML ใหม่</div>
+    <a id="thislink" href="https:youtube.com" target="_blank">google</a>
     <script>
+        console.log('Hello')
         let firstnameDOM = document.getElementById('firstname');
         
         console.log(firstnameDOM.value);
@@ -45,22 +50,23 @@
         
         for(let i=0; i < hobby.length; i++){
             console.log(hobby[i].value);
-        }
+        };
 
         function buttonClick(){
             console.log('คลิกแล้ว');
-        }
+        };
 
         const btn = document.getElementById('submit_btn');
         btn.addEventListener('click', submitData);
 
         function submitData(){
             console.log('ส่งข้อมูลแล้ว');
-        }
+            btn.setAttribute('disabled','true')
+        };
         
         function overItem(){
             console.log('วางเม้าส์แล้ว');
-        }
+        };
 
         const myname = document.getElementById('hellomyname');
         console.log(myname);
@@ -89,6 +95,10 @@
         contentHTML+='</ul>';
         let contentDOM=document.getElementById('NewContent');
         contentDOM.innerHTML=contentHTML
+
+        let thislinkDOM =document.getElementById('thislink');
+        console.log(thislinkDOM.getAttribute('href'));
+        thislinkDOM.setAttribute('href','https://youtube.com');
     </script>
 </body>
 </html>
